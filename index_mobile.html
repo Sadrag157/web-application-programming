@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Варіант 14 — Мобільна версія</title>
+  <style>
+    body {
+      margin:0; font-family:Arial, sans-serif;
+      background:#f5f5f5;
+    }
+    .container {
+      display:grid;
+      grid-template-columns: 200px 1fr 200px;
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-areas:
+        "block1 block1 block1"
+        "block2 block3 block4"
+        "block2 block5 block4"
+        "block6 block6 block6";
+      min-height:100vh;
+    }
+    .block { padding:10px; border:1px solid #ccc; box-sizing:border-box; }
+    .block1 { grid-area:block1; background:#cfe2f3; display:flex; justify-content:space-between; align-items:center; }
+    .block2 { grid-area:block2; background:#d9ead3; }
+    .block3 { grid-area:block3; background:#fff; }
+    .block4 { grid-area:block4; background:#d9ead3; }
+    .block5 { grid-area:block5; text-align:center; border-top:2px solid #000; }
+    .block6 { grid-area:block6; background:#cfe2f3; display:flex; justify-content:space-between; align-items:center; }
+
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "block1"
+          "block2"
+          "block3"
+          "block4"
+          "block5"
+          "block6";
+      }
+      .block1, .block6 { flex-direction:column; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="block block1"><div>1</div><div>x</div></header>
+    <aside class="block block2">2<br>Меню сайту</aside>
+    <main class="block block3">3<br>Основний контент</main>
+    <aside class="block block4">4<br>Додатково</aside>
+    <div class="block block5">5<br>Нижній розділ</div>
+    <footer class="block block6"><div>6</div><div>y</div></footer>
+  </div>
+</body>
+</html>
