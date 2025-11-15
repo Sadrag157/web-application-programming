@@ -16,7 +16,7 @@ body {
         "block2 block5 block4"
         "block2 block6 block6";
     
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .block {
